@@ -19,33 +19,32 @@
       <span class="span3"> </span>
   </div>
 
-  <div class="tools tools--hidden">
-
+  <div onclick="EffectsButtonsOnOff()" class="tools tools--hidden">
           <!-- EFEITOS -->
           <div class="fab">
             <button class="icon menu--button main">
               <img class="icon help" width="26" height="26" src="img/menu/effect.png">
             </button>
-            <ul>
-              <li>
-                <button id="circular">
-                  <img src="img/menu/poligon.png" width="26" height="26" alt="">
-                </button>
-                <label for="opcao1">Polígono</label>
-              </li>
-              <li>
-                <button id="grid">
-                  <img src="img/menu/grid-svgrepo-com.svg" width="26" height="26"  alt="">
-                </button>
-                <label for="opcao2">Grade</label>
-              </li>
-              <li>
-                <button id="opcao3">
-                ☏
-                </button>
-                <label for="opcao3">Opção 3</label>
-              </li>
-            </ul>
+              <ul id="effectslist">
+                <li>
+                  <button id="circular">
+                    <img src="img/menu/poligon.png" width="26" height="26" alt="">
+                  </button>
+                  <label for="opcao1">Polígono</label>
+                </li>
+                <li>
+                  <button id="grid">
+                    <img src="img/menu/grid-svgrepo-com.svg" width="26" height="26"  alt="">
+                  </button>
+                  <label for="opcao2">Grade</label>
+                </li>
+                <li>
+                  <button onclick="onoffForceAtlas()" id="opcao3">
+                  
+                  </button>
+                  <label for="opcao3">Opção 3</label>
+                </li>
+              </ul>
           </div>
       <!-- Invisivel -->
       <button id="hiden" class="menu--button" onclick="hide()">

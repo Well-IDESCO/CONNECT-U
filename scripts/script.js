@@ -51,6 +51,19 @@ function toggleFAB(fab){
   	document.querySelector(fab).classList.add('show');
   }
 }
+EffectsButtonFlag = 0;
+function EffectsButtonsOnOff(){
+  if (EffectsButtonFlag == 1){
+    EffectsButtonFlag = 0;
+  }else{
+    EffectsButtonFlag = 1;
+  }
+  if (EffectsButtonFlag == 1){
+    document.getElementById("effectslist").style.display = "block";
+  }else{
+    document.getElementById("effectslist").style.display = "none";
+  }
+}
 
 document.querySelector('.fab .main').addEventListener('click', function(){
 	toggleFAB('.fab');
@@ -59,6 +72,7 @@ document.querySelector('.fab .main').addEventListener('click', function(){
 document.querySelectorAll('.fab ul li button').forEach((item)=>{
 	item.addEventListener('click', function(){
 		toggleFAB('.fab');
+    document.getElementById("effectslist").style.display = "none";
 	});
 });
 
@@ -76,15 +90,18 @@ $('#grid').click(function(){
   sigma.plugins.animate(s,{x: 'grid_x', y: 'grid_y', size: 'grid_size', color: 'grid_color'});
 });
 
+
 //ON/OFF ForceAtlas
-function onoff(){
-  currentvalue = document.getElementById('onoff').value;
-  if(currentvalue == "Fluir"){
-    document.getElementById("onoff").value="Parar";
-    s.startForceAtlas2();
+ForceAtlasflag = 1;
+function onoffForceAtlas(){
+  if (ForceAtlasflag == 1){
+    ForceAtlasflag = 0;
+  }else{
+    ForceAtlasflag = 1;
   }
-  else{
-    document.getElementById("onoff").value="Fluir";
+  if (ForceAtlasflag == 1){
+    s.startForceAtlas2();
+  }else{
     s.stopForceAtlas2();
   }
 }
@@ -263,7 +280,7 @@ $.get(arbitraryCsvFile,function(body){
 });
 
 //TESTES
- function edgeonoff(){
+function edgeonoff(){
   s.refresh()
   FlagDrawLines = false;
 }
