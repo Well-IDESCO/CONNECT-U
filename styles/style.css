@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+#graph-container {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+input{
+  position:relative;
+  z-index:900;
+}
+.logo{
+  position: fixed;
+  right: 0pt;
+  bottom: 0pt;
+}
+/* --------------------------------BOTOES-------------------------------- */
+.buttons{
+  position:relative;
+  z-index:900;
+  position: fixed;
+  bottom: 0pt;
+  margin-bottom: 6px;
+  margin-left: 3px;
+}
+.btn {
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 8px;
+}
+
+.btn:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* Icon separator */
+.btn-sep {
+  padding: 5px 40px 5px 100px;
+}
+
+.btn-sep:before {
+  background: rgba(0,0,0,0.15);
+  border-radius: 50px 0px 0px 50px;
+}
+.teste{
+  display: none;
+}
+/* Button 1 */
+.btn-1 {
+  background: #007f3f;
+  color: #fff;
+}
+
+.btn-1:hover {
+  background: #004121;
+}
+
+.btn-1:active {
+  background: #007f3f;
+  top: 2px;
+}
+
+.btn-1:before {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  line-height: 1.;
+  font-size: 140%;
+  width: 60px;
+}
+
+/* Button 2 */
+.btn-2 {
+  background: #007f3f;
+  color: #fff;
+}
+
+.btn-2:hover {
+  background: #004121;
+}
+
+.btn-2:active {
+  background: #007f3f;
+  top: 2px;
+}
+
+.btn-2:before {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  line-height: 1.;
+  font-size: 140%;
+  width: 60px;
+}
+
+/* Button 3 */
+.btn-3 {
+  background: #007f3f;
+  color: #fff;
+}
+
+.btn-3:hover {
+  background: #004121;
+}
+
+.btn-3:active {
+  background: #007f3f;
+  top: 2px;
+}
+
+.btn-3:before {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  line-height: 1.;
+  font-size: 140%;
+  width: 60px;
+}
+/* Icons */
+
+.icon-poligono:before {
+  content: url("img/poligono.png");
+}
+
+.icon-grade:before {
+  content: url("img/grade.png");
+}
+
+.icon-fluir:before {
+  content: url("img/fluir.png");
+}
+
+/* --------------------------------MENU-------------------------------- */
+
+#conteudo {
+  position: absolute;
+  top: 0px;  
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: whitesmoke;
+  overflow: auto;
+}
+
+#nav {
+  position: absolute;
+  top: 0px;
+  left: -255px;
+  bottom: 20rem;
+  width: 250px;  
+  background-color: #007f3f00 ;
+  box-shadow: 0px 0px 10px black;
+  transition: left 0.5s linear;
+}
+
+#nav.show {
+  left: 0px;
+}
+
+.menu{
+  position: relative;
+  margin: 3px;
+  background-color: #007f3f;
+  width: 40px;
+  border-radius: 10px;
+  transition: 0.3s border-radius ease-in-out, 0.3s height ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.menu--closed{
+  height: 40px;
+}
+
+.menu--open{
+  height: 340px;
+  position: absolute;
+}
+
+.button{
+  transition: 0.3s transform ease-in-out, 0.3s opacity ease-in-out;
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 1.6em;
+  height: 1.9em;
+  top: 0.3em;
+  opacity: 1;
+}
+
+.button:hover {
+  opacity: 0.6;
+}
+
+.button span{
+  width: 100%;
+  height: 4px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+
+.menu--open .button{
+  .span1{
+    transform-origin:center;
+    background-color: #ffffff;
+    transform: translateY(10px) rotate(135deg);
+    transition: 0.5s;
+  }
+  .span2{
+    transform-origin:center;
+    background-color: rgb(255, 255, 255);
+    transform: scale(0);
+    transition: 0.5s;
+
+  }
+  .span3{
+    transform-origin:center;
+    background-color: rgb(255, 255, 255);
+    transform: translateY(-10px) rotate(-135deg);
+    transition: 0.5s;
+  }
+}
+
+
+.tools{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  height: 60%;
+  justify-content: space-between;
+  transition: 0.3s margin ease-in-out;
+}
+
+
+.tools .icon{
+  transition: 0.2s transform ease-in-out;
+}
+
+.tools .icon:hover{
+  transform: scale(0.8);
+}
+
+.tools--hidden{
+  margin-top: 4350px;
+  z-index: -100;
+}
+
+.tools--visible{
+  margin-top: 40%;
+  z-index: 100;
+}
+.menu--button{
+  background-color: #00000000;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #04aa6d00;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+/* TESTE */
+
+
+.fab button{
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 30px;
+  font-size: 22px;
+  color: #fff;
+  background-color: #007f3f;
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+.fab button.main{
+  z-index: 20;
+}
+
+
+.fab ul{
+  position:absolute;
+  top: 5vh;
+  left: 0vw;
+  padding:0;
+  margin:0;
+  list-style:none;
+  z-index:10;
+  
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.fab ul li{
+  display: flex;
+  position: relative;
+  margin-bottom: -10%;
+  opacity: 0;
+  
+  -webkit-transition: .3s ease-out;
+  -moz-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+
+.fab ul li label{
+  margin-right:10px;
+  white-space: nowrap;
+  display: block;
+
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,.2);
+  border-radius:3px;
+  height: 18px;
+  font-size: 16px;
+  pointer-events: none;
+  opacity: 0;
+  
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.fab.show button.main,
+.fab.show button.main{
+  outline: none;
+ }
+
+.fab.show button.main + ul,
+.fab.show button.main + ul{
+  right: 0px;
+  width: 130px;
+  margin-left: 90px;
+}
+
+.fab.show button.main + ul li,
+.fab.show button.main + ul li{
+  margin-bottom: 10px;
+  opacity: 1;
+}
+
+.fab.show button.main + ul li:hover label,
+.fab.show button.main + ul li:hover label{
+  opacity: 1;
+}
+.fab ul li label{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
