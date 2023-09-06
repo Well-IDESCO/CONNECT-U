@@ -80,12 +80,14 @@ document.querySelectorAll('.fab ul li button').forEach((item)=>{
 
 //POLYGON
 $('#circular').click(function(){
+  ForceAtlasflag = 0;
   s.stopForceAtlas2();
   sigma.plugins.animate(s, {x: 'circular_x', y: 'circular_y', size: 'circular_size', color: 'circular_color'});
 });
 
 //GRID
 $('#grid').click(function(){
+  ForceAtlasflag = 0;
   s.stopForceAtlas2();
   sigma.plugins.animate(s,{x: 'grid_x', y: 'grid_y', size: 'grid_size', color: 'grid_color'});
 });
@@ -93,6 +95,7 @@ $('#grid').click(function(){
 
 //ON/OFF ForceAtlas
 ForceAtlasflag = 1;
+console.log("INIT:", ForceAtlasflag)
 function onoffForceAtlas(){
   if (ForceAtlasflag == 1){
     ForceAtlasflag = 0;
@@ -104,6 +107,7 @@ function onoffForceAtlas(){
   }else{
     s.stopForceAtlas2();
   }
+  console.log(ForceAtlasflag)
 }
 
 // ------------------------------- GRAPH ------------------------------- //
@@ -115,9 +119,28 @@ unique_category_counts,
 step = 0, 
 arbitraryCsvFile="tables/hondiff.csv";
 
+teste = {nome1:"#ff0000", nome2:"#00ff00", nome3:"#0000ff" }
+
 Cols = 9;
 Lines = 40;
 FlagDrawLines = true;
+
+flagCOLOR = 0;
+function changebackgroundcolor(){
+  if (flagCOLOR == 0){
+    flagCOLOR = 1;
+  }
+  else{
+    flagCOLOR = 0;
+  }
+  if (flagCOLOR == 1){ 
+    document.getElementById("body").style.backgroundColor = "#000";
+  }
+  else{ 
+    document.getElementById("body").style.backgroundColor = "#fff";
+  }
+}
+
 
 function createGraph(g){
   if (typeof s != "undefined"){
@@ -194,14 +217,16 @@ function csv2graph(body){
     // for each cell
     for(var i in cells){
       cell_name_a = csv_header[i]+"?"+cells[i];
-
+      var CellNameCutted = cell_name_a.substring(cell_name_a.indexOf("?") + 1); 
       // is the vertex unique?
-      if(typeof vtx_cache[cell_name_a] === "undefined"){
+      if(typeof vtx_cache[cell_name_a] === "undefined"){ 
+        if(typeof vtx_cache[CellNameCutted] === "undefined"){
           o = generateVertex(cell_name_a, ++vtx_id, num_rows, columnColorMap, i,a,body);
           vtx_cache[cell_name_a] = i;
 
           // apply the basics atributes
           g.nodes.push(o);
+        }
       }
       // choose 2 cells in a line and draw an edge
       for(var j=length-1; j > i; j--){ 
