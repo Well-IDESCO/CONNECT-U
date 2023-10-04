@@ -11,6 +11,7 @@ body {
   left: 0;
   right: 0;
   overflow: hidden;
+  transition: 1s;
 }
 #graph-container {
   top: 0;
@@ -19,12 +20,10 @@ body {
   right: 0;
   position: absolute;
   z-index: -1;
-  
 }
 input{
   position:relative;
   z-index:900;
-
 }
 .logo{
   position: fixed;
@@ -58,7 +57,6 @@ input{
   transition: all 0.3s;
   border-radius: 8px;
 }
-
 .btn:after {
   content: '';
   position: absolute;
@@ -68,137 +66,11 @@ input{
   transition: all 0.3s;
 }
 
-/* Icon separator */
-.btn-sep {
-  padding: 5px 40px 5px 100px;
-}
-
-.btn-sep:before {
-  background: rgba(0,0,0,0.15);
-  border-radius: 50px 0px 0px 50px;
-}
-.teste{
-  display: none;
-}
-/* Button 1 */
-.btn-1 {
-  background: #007f3f;
-  color: #fff;
-}
-
-.btn-1:hover {
-  background: #004121;
-}
-
-.btn-1:active {
-  background: #007f3f;
-  top: 2px;
-}
-
-.btn-1:before {
-  position: absolute;
-  height: 100%;
-  left: 0;
-  top: 0;
-  line-height: 1.;
-  font-size: 140%;
-  width: 60px;
-}
-
-/* Button 2 */
-.btn-2 {
-  background: #007f3f;
-  color: #fff;
-}
-
-.btn-2:hover {
-  background: #004121;
-}
-
-.btn-2:active {
-  background: #007f3f;
-  top: 2px;
-}
-
-.btn-2:before {
-  position: absolute;
-  height: 100%;
-  left: 0;
-  top: 0;
-  line-height: 1.;
-  font-size: 140%;
-  width: 60px;
-}
-
-/* Button 3 */
-.btn-3 {
-  background: #007f3f;
-  color: #fff;
-}
-
-.btn-3:hover {
-  background: #004121;
-}
-
-.btn-3:active {
-  background: #007f3f;
-  top: 2px;
-}
-
-.btn-3:before {
-  position: absolute;
-  height: 100%;
-  left: 0;
-  top: 0;
-  line-height: 1.;
-  font-size: 140%;
-  width: 60px;
-}
-/* Icons */
-
-.icon-poligono:before {
-  content: url("img/poligono.png");
-}
-
-.icon-grade:before {
-  content: url("img/grade.png");
-}
-
-.icon-fluir:before {
-  content: url("img/fluir.png");
-}
-
 /* --------------------------------MENU-------------------------------- */
-
-#conteudo {
-  position: absolute;
-  top: 0px;  
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  background-color: whitesmoke;
-  overflow: auto;
-}
-
-#nav {
-  position: absolute;
-  top: 0px;
-  left: -255px;
-  bottom: 20rem;
-  width: 250px;  
-  background-color: #007f3f00 ;
-  box-shadow: 0px 0px 10px black;
-  transition: left 0.5s linear;
-}
-
-#nav.show {
-  left: 0px;
-}
-
 .menu{
   position: relative;
   margin: 3px;
-  background-color: #007f3f;
+  background-color: #04ac54;
   width: 40px;
   border-radius: 10px;
   transition: 0.3s border-radius ease-in-out, 0.3s height ease-in-out;
@@ -208,16 +80,13 @@ input{
   justify-content: center;
   overflow: visible;
 }
-
 .menu--closed{
   height: 40px;
 }
-
 .menu--open{
   height: 340px;
   position: absolute;
 }
-
 .button{
   transition: 0.3s transform ease-in-out, 0.3s opacity ease-in-out;
   cursor: pointer;
@@ -230,11 +99,9 @@ input{
   top: 0.3em;
   opacity: 1;
 }
-
 .button:hover {
   opacity: 0.6;
 }
-
 .button span{
   width: 100%;
   height: 4px;
@@ -242,30 +109,24 @@ input{
   border-radius: 20px;
   transition: 0.5s;
 }
-
 .menu--open .button{
   .span1{
     transform-origin:center;
-    background-color: #ffffff;
     transform: translateY(10px) rotate(135deg);
     transition: 0.5s;
   }
   .span2{
     transform-origin:center;
-    background-color: rgb(255, 255, 255);
     transform: scale(0);
     transition: 0.5s;
 
   }
   .span3{
     transform-origin:center;
-    background-color: rgb(255, 255, 255);
     transform: translateY(-10px) rotate(-135deg);
     transition: 0.5s;
   }
 }
-
-
 .tools{
   display: flex;
   flex-wrap: wrap;
@@ -275,21 +136,16 @@ input{
   justify-content: space-between;
   transition: 0.3s margin ease-in-out;
 }
-
-
 .tools .icon{
   transition: 0.2s transform ease-in-out;
 }
-
 .tools .icon:hover{
   transform: scale(0.8);
 }
-
 .tools--hidden{
   margin-top: 4350px;
   z-index: -100;
 }
-
 .tools--visible{
   margin-top: 40%;
   z-index: 100;
@@ -307,11 +163,7 @@ input{
   cursor: pointer;
 }
 
-
-
 /* TESTE */
-
-
 .fab button{
   cursor: pointer;
   width: 40px;
@@ -320,7 +172,7 @@ input{
   border-radius: 30px;
   font-size: 22px;
   color: #fff;
-  background-color: #007f3f;
+  background-color: #04ac54;
   -webkit-transition: .2s ease-out;
   -moz-transition: .2s ease-out;
   transition: .2s ease-out;
@@ -328,7 +180,6 @@ input{
 .fab button.main{
   z-index: 20;
 }
-
 
 .fab ul{
   position:absolute;

@@ -1,4 +1,3 @@
-nome,nome2,nome3
-Guilherme,Thiago,Well
-Thiago,Well,Guilherme
-Well,Guilherme,Thiago
+knownAfter,knownBefore
+Guilherme,Thiago
+Well,Guilherme

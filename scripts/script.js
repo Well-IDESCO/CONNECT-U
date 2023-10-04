@@ -95,7 +95,6 @@ $('#grid').click(function(){
 
 //ON/OFF ForceAtlas
 ForceAtlasflag = 1;
-console.log("INIT:", ForceAtlasflag)
 function onoffForceAtlas(){
   if (ForceAtlasflag == 1){
     ForceAtlasflag = 0;
@@ -107,7 +106,6 @@ function onoffForceAtlas(){
   }else{
     s.stopForceAtlas2();
   }
-  console.log(ForceAtlasflag)
 }
 
 // ------------------------------- GRAPH ------------------------------- //
@@ -119,7 +117,7 @@ unique_category_counts,
 step = 0, 
 arbitraryCsvFile="tables/hondiff.csv";
 
-teste = {nome1:"#ff0000", nome2:"#00ff00", nome3:"#0000ff" }
+teste = {knownAfter:"ff0000",knownBefore:"#000"}
 
 Cols = 9;
 Lines = 40;
@@ -146,6 +144,7 @@ function createGraph(g){
   if (typeof s != "undefined"){
     s.graph.clear();
     s.refresh()
+    
   }
   s = new sigma({
     graph: g,
@@ -159,29 +158,11 @@ function createGraph(g){
       drawEdges: FlagDrawLines,
       minNodeSize:0,
       maxNodeSize:0,
-      //autoSettings: true,
-      //linLogMode: false,
-      //outboundAttractionDistribution: false,
-      //adjustSizes: true,
-      //edgeWeightInfluence: .1,
-      //scalingRatio: 1,
-      //strongGravityMode: false,
-      //gravity: 10,
-      //jitterTolerance: 2,
-      //barnesHutOptimize: true,
-      //barnesHutTheta: 1.2,
-      //speed: 10,
-      //outboundAttCompensation: 1,
-      //totalSwinging: 0,
-      //totalEffectiveTraction: 0,
-      //complexIntervals: 500,
-      //simpleIntervals: 1000,
-      //batchEdgesDrawing:true,
-      //webglEdgesBatchSize:1000
     }
   });
   s.startForceAtlas2();
 }
+
 
 // generates the color map
 function generateColorMap(list){
@@ -217,21 +198,21 @@ function csv2graph(body){
     // for each cell
     for(var i in cells){
       cell_name_a = csv_header[i]+"?"+cells[i];
-      var CellNameCutted = cell_name_a.substring(cell_name_a.indexOf("?") + 1); 
       // is the vertex unique?
-      if(typeof vtx_cache[cell_name_a] === "undefined"){ 
-        if(typeof vtx_cache[CellNameCutted] === "undefined"){
+      if(typeof vtx_cache[cell_name_a] === "undefined"){
           o = generateVertex(cell_name_a, ++vtx_id, num_rows, columnColorMap, i,a,body);
           vtx_cache[cell_name_a] = i;
 
+          console.log(cell_name_a)
+
           // apply the basics atributes
           g.nodes.push(o);
-        }
+         
       }
       // choose 2 cells in a line and draw an edge
       for(var j=length-1; j > i; j--){ 
         g.edges.push({id: 'e'+edge_id++, source: cell_name_a, target: csv_header[j]+"?"+cells[j]});
-      }   
+      }
     }
   }
   return g;
