@@ -1,4 +1,4 @@
-# CSV para grafos - Projeto ConnectU pelo IDESCO.
+# CSV para grafos - Projeto ConnectU.
 
 CSV para implementação gráfica usando o relacionamento de co-ocorrência em linhas, mostrando a conexão social entre pessoas.
 
